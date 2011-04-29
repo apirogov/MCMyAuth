@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title><%= $servername %></title>
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+            }
+
+            .box {
+              border: 3px dashed gray;
+              margin: 5px;
+              padding: 5px;
+              width: 30%;
+            }
+            .box form {
+              padding: 0px;
+              margin: 0px;
+            }
+            .box p {
+              padding: 0px;
+              margin: 0px;
+              margin-bottom: 10px;
+            }
+            .box label {
+              float: left;
+              width: 40%;
+            }
+
+            #bottom {
+                float: right;
+                color: gray;
+                font-size: 10px;
+            }
+        </style>
+    </head>
+    <body>
+       <%= yield %>
+       <span id="bottom">
+           Powered by MCMyAuth v<%=$mcma_version%>
+        </span>
+    </body>
+</html>

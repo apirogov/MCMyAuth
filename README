@@ -1,0 +1,45 @@
+MCMyAuth - Custom Minecraft User Authentication
+Copyright (C) 2011 Anton Pirogov
+Licensed under the GPL version 3
+
+----
+Why MCMyAuth?
+
+It is lightweight, easy to set up (on unix machines)
+and provides an alternative login system independent
+from www.minecraft.net for your personal server.
+MCMyAuth only requires to add an entry to your hosts file
+and needs no server side modding.
+
+----
+Why NOT MCMyAuth?
+
+This program handles just the basics and provides password
+secured login for your users. You can not set skins or cloaks
+and there is no password recovery system (admin can only delete
+user from the file to let him register again)
+
+Also, MCMyAuth depends on the usage of a modded Minecraft Launcher,
+which allows to decide which authentication server to connect to
+(that means, with that launcher a player can connect to any
+MCMyAuth server with a provided address).
+
+----
+Requirements: sinatra gem
+
+----
+Usage:
+1. redirect www.minecraft.net to the server running this app in your hosts file.
+   This is neccessary for the server to use this app instead of the official
+   site without modding the minecraft_server.jar.
+
+2. start the app with start.sh (before you might want to change some settings in config.rb)
+
+3. run your server with online-mode=true
+
+Now all authentication should run over your own authentication server (this app).
+Your players can now login over the MCMyAuth launcher.
+
+You can open localhost/users in your webbrowser to register accounts.
+(If you have not modified the URL)
+

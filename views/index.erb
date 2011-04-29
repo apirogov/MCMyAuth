@@ -1,0 +1,39 @@
+<h2>Welcome to the user management of <%= $servername %></h2>
+
+<div class="box">
+  <form method="post" action="<%=$mainpage%>/register">
+    <p style="font-weight: bold;">Create account</p>
+    <label for="name">Nickname:</label><input type="text" name="name" maxlength="20" />
+    <br />
+    <label for="pwd">Password:</label><input type="password" name="pwd" maxlength="20" />
+    <label>&nbsp;</label><input type="submit" value="Register" />
+  </form>
+</div>
+
+<div class="box">
+  <form method="post" action="<%=$mainpage%>/changepw">
+    <p style="font-weight: bold;">Change password</p>
+    <label for="name">Nickname:</label><input type="text" name="name" maxlength="20" />
+    <br />
+    <label for="pwd">Old password:</label><input type="password" name="pwd" maxlength="20" />
+    <label for="newpwd">New password:</label><input type="password" name="newpwd" maxlength="20" />
+    <label>&nbsp;</label><input type="submit" value="Change password" />
+  </form>
+</div>
+
+<div class="box">
+  <form method="post" action="<%=$mainpage%>/unregister">
+    <p style="font-weight: bold;">Delete account</p>
+    <label for="name">Nickname:</label><input type="text" name="name" maxlength="20" />
+    <br />
+    <label for="pwd">Password:</label><input type="password" name="pwd" maxlength="20" />
+    <label>&nbsp;</label><input type="submit" value="Unregister" />
+  </form>
+</div>
+
+<br /><br />
+Forgot your password? Contact the administrator:<br/>
+<div class="box">
+  <%= $admincontact %>
+</div>
+
