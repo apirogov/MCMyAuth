@@ -14,15 +14,39 @@ and needs no server side modding.
 ----
 Why NOT MCMyAuth?
 
-This program handles just the basics and provides password
-secured login for your users. You can not set skins or cloaks
-and there is no password recovery system (admin can only delete
-user from the file to let him register again)
-
-Also, MCMyAuth depends on the usage of a modded Minecraft Launcher,
+1. MCMyAuth depends on the usage of a modded Minecraft Launcher,
 which allows to decide which authentication server to connect to
 (that means, with that launcher a player can connect to any
 MCMyAuth server with a provided address).
+
+THIS MEANS IF YOU CAN NOT GET A MCMyAuth LAUNCHER, YOU CAN NOT USE THIS!
+I can not provide you with the launcher I made.
+
+BUT:
+If you have some Java expertise, you can create your own launcher working
+with MCMyAuth - all you have to do is change the login post from:
+
+https://login.minecraft.net
+to:
+http://address of mcmyauth instance/login
+
+the response from MCMyAuth is also only:
+username:sessionId
+instead of:
+version:downloadticket:username:sessionId
+
+Last thing to do is to redirect the client traffic from www.minecraft.net to this server (joinserver.jsp)
+I've used the proxy source from Mineshafter and integrated it into the client to do this.
+
+(see http://mc.kev009.com/Authentication for reference)
+
+Of course, if you can mod the launcher, you could also write your own
+authentication server. But I hope by using MCMyAuth you save some time.
+
+2. This program handles just the basics and provides password
+secured login for your users. You can not set skins or cloaks
+and there is no password recovery system (admin can only delete
+user from the file to let him register again)
 
 ----
 Requirements: sinatra gem
