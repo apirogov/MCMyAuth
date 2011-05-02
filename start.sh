@@ -1,1 +1,2 @@
-rvmsudo ruby main.rb -p80
+#!/bin/sh
+sudo ruby main.rb -p80

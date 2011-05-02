@@ -69,6 +69,7 @@ post $mainpage+'/register' do
   return msg 'You have to set a nickname!' if name==''
   return msg 'User already exists!' if $userpws[name] != nil
   return msg 'You have to set a password!' if pwd==''
+  return msg 'Passwords do not match!' if pwd != params[:pwdrep]
 
   $userpws[name] = md5 pwd
   save_users
@@ -80,6 +81,7 @@ post $mainpage+'/changepw' do
   name = params[:name]
   pwd = params[:pwd]
   return msg 'Wrong nickname or password!' if $userpws[name].nil? || md5(pwd) != $userpws[name]
+  return msg 'Passwords do not match!' if params[:newpwd] != params[:pwdrep]
 
   $userpws[name] = md5 params[:newpwd]
   save_users

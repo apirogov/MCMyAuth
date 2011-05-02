@@ -45,8 +45,9 @@ authentication server. But I hope by using MCMyAuth you save some time.
 
 2. This program handles just the basics and provides password
 secured login for your users. You can not set skins or cloaks
-and there is no password recovery system (admin can only delete
-user from the file to let him register again)
+over the web interface and there is no password recovery system 
+(admin can only delete user from the file to let him register again
+and only admin can add skins (into the public/skin dir) for players)
 
 ----
 Requirements: sinatra gem
